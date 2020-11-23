@@ -33,11 +33,11 @@ jobs:
           echo "DOCKER_IMAGE_NAME=$DOCKER_IMAGE_NAME-pre" >> $GITHUB_ENV
           echo "S3_PATH=$S3_PATH/test" >> $GITHUB_ENV
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1 
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      # - name: Login to DockerHub
+      #   uses: docker/login-action@v1 
+      #   with:
+      #     username: ${{ secrets.DOCKERHUB_USERNAME }}
+      #     password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
       - name: Build and push
         env:
