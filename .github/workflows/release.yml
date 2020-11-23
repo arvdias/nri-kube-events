@@ -51,7 +51,6 @@ jobs:
             docker tag $DOCKER_IMAGE_NAME $DOCKER_IMAGE_NAME:latest
             echo "docker push $DOCKER_IMAGE_NAME:latest"
           fi
-
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
