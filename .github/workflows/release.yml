@@ -10,7 +10,7 @@ on:
 env: 
  
   DOCKER_IMAGE_NAME: newrelic/nri-kube-events
-  RELEASE_VERSION: ${{ github.event.release.name }}
+  RELEASE_VERSION: ${{ github.event.release.tag_name }}
   S3_PATH: s3://nr-downloads-main/infrastructure_agent
 
 jobs:
