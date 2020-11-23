@@ -44,12 +44,12 @@ jobs:
           PRERELEASE: ${{ github.event.release.prerelease }}
         run: |
           make docker-build
-          docker push $DOCKER_IMAGE_NAME
+          echo "docker push $DOCKER_IMAGE_NAME"
 
           # if this is a pre-release do not push 'latest'
           if [[ "false" eq "${{ github.event.release.prerelease }}" ]]; then
             docker tag $DOCKER_IMAGE_NAME $DOCKER_IMAGE_NAME:latest
-            docker push $DOCKER_IMAGE_NAME:latest
+            echo "docker push $DOCKER_IMAGE_NAME:latest"
           fi
 
       - uses: aws-actions/configure-aws-credentials@v1
